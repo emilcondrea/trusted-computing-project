@@ -3,7 +3,7 @@
 
 二、初始化
 
-	1、sudo modprobe tpm_tis
+	1、sudo modprobe tpm_tis # 如果是tpm emulator则：sudo modprobe tpmd_dev; tpmd -f -d clear
 	2、运行sudo tcsd
 	3、确保TPM没有被TakeOwnership，否则会出错
 	4、进入init目录，运行./Tspi_TPM_TakeOwnership01 -v 1.2
