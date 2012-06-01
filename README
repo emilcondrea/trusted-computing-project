@@ -21,6 +21,7 @@
 	4、运行./extend -v 1.2 （成功）
 	5、运行./unseal -v 1.2  （失败）
 	6、运行./seal_file test.c test.en（查看文件test.en的内容）
+	# unseal_file.c 由同学们自己完成。
 	7、运行./unseal_file test.en test.de（查看文件test.de的内容）
 	8、运行./extend -v 1.2
 	9、运行./unseal_file test.en test.de（失败）
