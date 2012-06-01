@@ -1,47 +1,47 @@
-Ò»¡¢±àÒë£º
-	1¡¢ÔÚ´ËÄ¿Â¼ÏÂÔËĞĞmake
+ä¸€ã€ç¼–è¯‘ï¼š
+	1ã€åœ¨æ­¤ç›®å½•ä¸‹è¿è¡Œmake
 
-¶ş¡¢³õÊ¼»¯
+äºŒã€åˆå§‹åŒ–
 
-	1¡¢sudo modprobe tpm_tis
-	2¡¢ÔËĞĞsudo tcsd
-	3¡¢È·±£TPMÃ»ÓĞ±»TakeOwnership£¬·ñÔò»á³ö´í
-	4¡¢½øÈëinitÄ¿Â¼£¬ÔËĞĞ./Tspi_TPM_TakeOwnership01 -v 1.2
-	5¡¢ÔËĞĞ ./create_mig_key -v 1.2£¨ÊäÈëpin£©
+	1ã€sudo modprobe tpm_tis
+	2ã€è¿è¡Œsudo tcsd
+	3ã€ç¡®ä¿TPMæ²¡æœ‰è¢«TakeOwnershipï¼Œå¦åˆ™ä¼šå‡ºé”™
+	4ã€è¿›å…¥initç›®å½•ï¼Œè¿è¡Œ./Tspi_TPM_TakeOwnership01 -v 1.2
+	5ã€è¿è¡Œ ./create_mig_key -v 1.2ï¼ˆè¾“å…¥pinï¼‰
 
-Èı¡¢KeyHierarchy
-	1¡¢½øÈëKey hierarchyÄ¿Â¼
-	2¡¢ÔËĞĞ./create_register_key -v 1.2
-	3¡¢ÔËĞĞ./load_key -v 1.2
+ä¸‰ã€KeyHierarchy
+	1ã€è¿›å…¥Key hierarchyç›®å½•
+	2ã€è¿è¡Œ./create_register_key -v 1.2
+	3ã€è¿è¡Œ./load_key -v 1.2
 
-ËÄ¡¢Seal¡¢UnsealºÍextend
-	1¡¢½øÈëSealUnsealÄ¿Â¼
-	2¡¢ÔËĞĞ./seal -v 1.2  £¨³É¹¦£©
-	3¡¢ÔËĞĞ./unseal -v 1.2 £¨³É¹¦£©
-	4¡¢ÔËĞĞ./extend -v 1.2 £¨³É¹¦£©
-	5¡¢ÔËĞĞ./unseal -v 1.2  £¨Ê§°Ü£©
-	6¡¢ÔËĞĞ./seal_file test.c test.en£¨²é¿´ÎÄ¼ştest.enµÄÄÚÈİ£©
-	7¡¢ÔËĞĞ./unseal_file test.en test.de£¨²é¿´ÎÄ¼ştest.deµÄÄÚÈİ£©
-	8¡¢ÔËĞĞ./extend -v 1.2
-	9¡¢ÔËĞĞ./unseal_file test.en test.de£¨Ê§°Ü£©
+å››ã€Sealã€Unsealå’Œextend
+	1ã€è¿›å…¥SealUnsealç›®å½•
+	2ã€è¿è¡Œ./seal -v 1.2  ï¼ˆæˆåŠŸï¼‰
+	3ã€è¿è¡Œ./unseal -v 1.2 ï¼ˆæˆåŠŸï¼‰
+	4ã€è¿è¡Œ./extend -v 1.2 ï¼ˆæˆåŠŸï¼‰
+	5ã€è¿è¡Œ./unseal -v 1.2  ï¼ˆå¤±è´¥ï¼‰
+	6ã€è¿è¡Œ./seal_file test.c test.enï¼ˆæŸ¥çœ‹æ–‡ä»¶test.ençš„å†…å®¹ï¼‰
+	7ã€è¿è¡Œ./unseal_file test.en test.deï¼ˆæŸ¥çœ‹æ–‡ä»¶test.deçš„å†…å®¹ï¼‰
+	8ã€è¿è¡Œ./extend -v 1.2
+	9ã€è¿è¡Œ./unseal_file test.en test.deï¼ˆå¤±è´¥ï¼‰
 	
 
 
-Îå¡¢KeyMigration
-	1¡¢½øÈëKey MigrationÄ¿Â¼
-	2¡¢ÔÚ»úÆ÷1ÖĞÔËĞĞ./platform_dst -g £¬»á²úÉúÃûÎªsrk.pubµÄÎÄ¼ş
-	3¡¢°ÑÎÄ¼şsrk.pub¿½±´µ½»úÆ÷2ÖĞ
-	4¡¢ÔÚ»úÆ÷2ÖĞÔËĞĞ./platform_src £¬»á²úÉúÃûÎªmig.blobµÄÎÄ¼ş
-	5¡¢°ÑÎÄ¼şsrk.pub¿½±´µ½»úÆ÷1ÖĞ
-	6¡¢ÔÚ»úÆ÷1ÖĞÔËĞĞ./platform_dst -m
+äº”ã€KeyMigration
+	1ã€è¿›å…¥Key Migrationç›®å½•
+	2ã€åœ¨æœºå™¨1ä¸­è¿è¡Œ./platform_dst -g ï¼Œä¼šäº§ç”Ÿåä¸ºsrk.pubçš„æ–‡ä»¶
+	3ã€æŠŠæ–‡ä»¶srk.pubæ‹·è´åˆ°æœºå™¨2ä¸­
+	4ã€åœ¨æœºå™¨2ä¸­è¿è¡Œ./platform_src ï¼Œä¼šäº§ç”Ÿåä¸ºmig.blobçš„æ–‡ä»¶
+	5ã€æŠŠæ–‡ä»¶srk.pubæ‹·è´åˆ°æœºå™¨1ä¸­
+	6ã€åœ¨æœºå™¨1ä¸­è¿è¡Œ./platform_dst -m
 
-Áù¡¢RemoteAttestation
-	»úÆ÷1£º
-	1¡¢½øÈëRemote Attestation\initÄ¿Â¼
-	2¡¢ÔËĞĞ./Create_AIK
-	3¡¢·µ»ØÉÏ¼¶Ä¿Â¼
-	4¡¢ÔËĞĞ./RAServer
+å…­ã€RemoteAttestation
+	æœºå™¨1ï¼š
+	1ã€è¿›å…¥Remote Attestation\initç›®å½•
+	2ã€è¿è¡Œ./Create_AIK
+	3ã€è¿”å›ä¸Šçº§ç›®å½•
+	4ã€è¿è¡Œ./RAServer
 
-	»úÆ÷2£º
-	1¡¢½øÈëRemote AttestationÄ¿Â¼
-	2¡¢ÔËĞĞ./RAClient »úÆ÷2µÄip »úÆ÷1µÄip £¨Èç£¬./RAClient 192.168.200.1 192.168.200.2£©
+	æœºå™¨2ï¼š
+	1ã€è¿›å…¥Remote Attestationç›®å½•
+	2ã€è¿è¡Œ./RAClient æœºå™¨2çš„ip æœºå™¨1çš„ip ï¼ˆå¦‚ï¼Œ./RAClient 192.168.200.1 192.168.200.2ï¼‰
